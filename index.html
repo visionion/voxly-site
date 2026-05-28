@@ -39,8 +39,9 @@
   }
   </script>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f97316'/%3E%3Cpath d='M16 6a4 4 0 014 4v6a4 4 0 01-8 0v-6a4 4 0 014-4z' fill='%23fff'/%3E%3Cpath d='M10 14v2a6 6 0 0012 0v-2' stroke='%23fff' stroke-width='2' fill='none'/%3E%3Cpath d='M16 22v4M12 26h8' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <!-- Favicon & icons -->
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -77,14 +78,7 @@
     <section class="hero">
       <div class="hero-glow"></div>
       <div class="hero-content">
-        <div class="hero-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
-            <path d="M19 10v2a7 7 0 01-14 0v-2"/>
-            <line x1="12" y1="19" x2="12" y2="23"/>
-            <line x1="8" y1="23" x2="16" y2="23"/>
-          </svg>
-        </div>
+        <img src="/icon.png" alt="Voxly app icon" class="hero-app-icon" width="128" height="128" />
         <h1 class="hero-title">Voxly</h1>
         <p class="hero-tagline">Voice to Text for Mac</p>
         <p class="hero-subtitle">
@@ -230,12 +224,18 @@
       <!-- Install note -->
       <section class="requirements-section">
         <h2>Installing</h2>
-        <p style="max-width:640px;margin:0 auto;opacity:.8;line-height:1.7">
-          Open the downloaded <strong>Voxly.dmg</strong> and drag Voxly to your Applications folder.
-          On first launch, right-click the app and choose <strong>Open</strong> (this build is
-          independently signed). Grant <strong>Microphone</strong> and <strong>Accessibility</strong>
-          permissions when prompted — these let Voxly hear you and type at your cursor. Nothing leaves your Mac.
-        </p>
+        <ol style="max-width:640px;margin:0 auto;opacity:.85;line-height:1.8;text-align:left;padding-left:1.2rem">
+          <li>Open <strong>Voxly.dmg</strong> and drag <strong>Voxly</strong> into your <strong>Applications</strong> folder.</li>
+          <li>
+            Because Voxly is a free app distributed outside the App Store, macOS may say it
+            <em>"is damaged"</em> on first launch. This is just Gatekeeper — to allow it, open
+            <strong>Terminal</strong> and run:
+            <br>
+            <code style="display:inline-block;margin:.5rem 0;padding:.5rem .8rem;background:rgba(255,255,255,.06);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.85rem;user-select:all">xattr -dr com.apple.quarantine /Applications/Voxly.app</code>
+            <br>Then open Voxly normally.
+          </li>
+          <li>Grant <strong>Microphone</strong> and <strong>Accessibility</strong> permissions when prompted — these let Voxly hear you and type at your cursor. Nothing leaves your Mac.</li>
+        </ol>
       </section>
 
       <!-- CTA -->
