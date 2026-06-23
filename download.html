@@ -46,6 +46,15 @@
   <!-- End Cloudflare Web Analytics -->
 
   <script>
+    // Record the download in Google Analytics (sent via beacon, survives the redirect).
+    if (typeof gtag === 'function') {
+      gtag('event', 'file_download', {
+        app_name: 'Voxly',
+        file_name: 'Voxly.dmg',
+        file_extension: 'dmg',
+        link_url: '/Voxly.dmg'
+      });
+    }
     // Start the actual download shortly after the page (and beacon) load.
     setTimeout(function () { window.location.href = "/Voxly.dmg"; }, 800);
   </script>
